@@ -11,5 +11,5 @@ def get_database() -> Database:
     if _db is None:
         mongo_uri = os.getenv("MONGODB_URI")
         _client = MongoClient(mongo_uri)
-        _db = _client.get_default_database()
+        _db = _client["emotion_music"]
     return _db
