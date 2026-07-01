@@ -12,3 +12,6 @@ numpy==1.26.4
 pydantic==2.7.1
 pydantic-settings==2.2.1
 tf-keras==2.15.0
+pymongo==4.7.2
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
