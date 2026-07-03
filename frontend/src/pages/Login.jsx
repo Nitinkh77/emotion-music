@@ -27,36 +27,50 @@ export default function Login() {
 
   return (
     <div className="auth-page">
-      <form className="auth-card" onSubmit={handleSubmit}>
-        <h2>Welcome Back 👋</h2>
-        <p className="auth-subtitle">Log in to see your mood history</p>
+      <div className="auth-card">
+        <form className="auth-form-side" onSubmit={handleSubmit}>
+          <div className="auth-brand">🎵 Moodify</div>
+          <h2>Welcome Back 👋</h2>
+          <p className="auth-subtitle">Log in to see your mood history</p>
 
-        {error && <div className="auth-error">{error}</div>}
+          {error && <div className="auth-error">{error}</div>}
 
-        <label>Email</label>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+          <label>Email</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
 
-        <label>Password</label>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+          <label>Password</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
 
-        <button className="btn btn-primary" type="submit" disabled={loading}>
-          {loading ? "Logging in..." : "Log In"}
-        </button>
+          <button className="btn btn-primary" type="submit" disabled={loading}>
+            {loading ? "Logging in..." : "Log In"}
+          </button>
 
-        <p className="auth-switch">
-          Don't have an account? <Link to="/signup">Sign up</Link>
-        </p>
-      </form>
+          <p className="auth-switch">
+            Don't have an account? <Link to="/signup">Sign up</Link>
+          </p>
+        </form>
+
+        <div className="auth-visual-side">
+          <div className="auth-waveform">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+          <p className="auth-visual-title">Welcome back.</p>
+          <p className="auth-visual-text">
+            Your mood history and favorites are right where you left them.
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
